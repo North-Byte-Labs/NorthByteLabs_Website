@@ -1,0 +1,13 @@
+[build]
+  command = "yarn build"
+  publish = "build"
+
+[build.environment]
+  # CRA treats warnings as errors in CI by default; disable that.
+  CI = "false"
+
+# SPA fallback so client-side anchors/routes resolve to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
